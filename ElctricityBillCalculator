@@ -1,0 +1,130 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<string.h>
+#include<Windows.h>
+
+void details();
+void Urban();
+void Rural();
+int i;
+
+
+struct ElectricBill
+{
+	char area[50];
+	char name[100];
+	int meternumber;
+    int unitsconsumed;
+	char email[50];
+	char address[100];
+};
+
+struct ElectricBill B;
+
+void main()
+{
+	details();
+	int option;
+	printf("****Electricity Bill****\n");
+		printf("Please enter your choice from below (1-2):\n");
+		printf("1. Urban\n");
+		printf("2. Rural\n");
+		printf("3. EXIT\n");
+		printf("Electricity Board Helpline: 8435 2340\n");
+		printf("Enter your choice :\n");
+		scanf("%d", &option);
+		system("cls");
+	while(option!=3){
+		switch (option)
+		{
+		case 1:
+			Urban();
+			break;
+		case 2:
+			Rural();
+			break;
+		default:
+			printf("SORRY INVALID CHOICE!\n");
+			printf("PLEASE CHOOSE FROM 1 or 2\n");
+
+        }
+		getch();
+	}
+
+}
+
+void details()
+{
+    printf("\nEnter your area name : ");
+	scanf("%s", B.area);
+
+	printf("\nEnter your name: ");
+	scanf("%s", B.name);
+
+	printf("\nEnter your Meter Number: ");
+	scanf("%d", &B.meternumber);
+
+    printf("\nEnter units consumed: ");
+	scanf("%d", &B.unitsconsumed);
+
+    printf("\nEnter email ID : ");
+    scanf("%s", B.email);
+
+    printf("\nEnter the permanent address : ");
+    scanf("%s", B.address);
+
+}
+
+void Urban()
+{
+    int amount=0;
+    B.unitsconsumed;
+    if(B.unitsconsumed <=30 && B.unitsconsumed >= 0)
+    {
+        amount = B.unitsconsumed * 3.25;
+    }
+    else if(B.unitsconsumed >= 31 && B.unitsconsumed <= 100)
+    {
+        amount = B.unitsconsumed * 4.70;
+    }
+    else if(B.unitsconsumed >= 101 && B.unitsconsumed <= 200)
+    {
+        amount = B.unitsconsumed * 6.25;
+    }
+    else
+    {
+        amount = B.unitsconsumed * 7.30;
+    }
+
+    printf("****Electricity Bill****\n\n");
+    printf("Name : %s\n", B.name);
+    printf("In Urban, your electricity bill is: %d\n", amount);
+    printf("Units you consumed per month: %d\n", B.unitsconsumed);
+}
+
+void Rural()
+{
+    int amount=0;
+    B.unitsconsumed;
+    if(B.unitsconsumed <=30 && B.unitsconsumed >= 0)
+    {
+        amount = B.unitsconsumed * 3.15;
+    }
+    else if(B.unitsconsumed >= 31 && B.unitsconsumed <= 100)
+    {
+        amount = B.unitsconsumed * 4.40;
+    }
+    else if(B.unitsconsumed >= 101 && B.unitsconsumed <= 200)
+    {
+        amount = B.unitsconsumed * 5.95;
+    }
+    else
+    {
+        amount = B.unitsconsumed * 6.80;
+    }
+    printf("****Electricity Bill****\n\n");
+    printf("Name : %s\n", B.name);
+    printf("In Urban, your electricity bill is: %d\n", amount);
+    printf("Units you consumed per month: %d\n", B.unitsconsumed); 
+    }
